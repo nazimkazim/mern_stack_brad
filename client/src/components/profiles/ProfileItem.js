@@ -36,11 +36,12 @@ class ProfileItem extends Component {
           <div className="col-4 d-none d-md-block">
             <h4>Skillset</h4>
             <ul className="list-group">
-              {profile.skills.slice(0, 4).map((skill, index) => {
+              {profile.skills.slice(0, 4).map((skill, index) => (
                 <li key={index} class="list-group-item">
-                  <i className="fa fa-check pr-1">{skill}</i>
-                </li>;
-              })}
+                  <i className="fa fa-check pr-1" />
+                  {skill}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -49,7 +50,7 @@ class ProfileItem extends Component {
   }
 }
 
-ProfileItem.PropTypes = {
+ProfileItem.propTypes = {
   profile: PropTypes.object.isRequired
 };
 
