@@ -78,7 +78,6 @@ class ProfileHeader extends Component {
             </div>
           </div>
         </div>
-        <h1>TO DO:profile Header</h1>
       </div>
     );
   }
