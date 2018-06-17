@@ -9,6 +9,9 @@ class Profiles extends Component {
   componentDidMount() {
     this.props.getProfiles();
   }
+
+  
+
   render() {
     const { profiles, loading } = this.props.profile;
     let profileItems;
