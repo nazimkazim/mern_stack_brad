@@ -12,3 +12,4 @@ export const GET_POSTS = 'GET_POSTS';
 export const GET_ADD = 'GET_ADD';
 export const DELETE_POST = 'DELETE_POST';
 export const DELETE_PROFILES = 'DELETE_PROFILES';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
