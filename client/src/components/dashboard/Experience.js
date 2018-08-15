@@ -25,7 +25,7 @@ class Experience extends Component {
         <td>
           <button
             onClick={this.onDeleteClick.bind(this, exp._id)}
-            className="btn btn-danger"
+            className="button is-danger"
           >
             Delete
           </button>
@@ -34,8 +34,13 @@ class Experience extends Component {
     ));
     return (
       <div>
-        <h4 className="mb-4">Experience Credentials</h4>
-        <table className="table">
+        <h4
+          className="has-text-centered has-text-primary is-uppercase has-text-weight-light"
+          style={{ marginTop: 30 }}
+        >
+          Experience Credentials
+        </h4>
+        <table className="table is-fullwidth" style={{ marginTop: 30 }}>
           <thead>
             <tr>
               <th>Company</th>

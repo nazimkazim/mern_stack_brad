@@ -25,7 +25,7 @@ class Education extends Component {
         <td>
           <button
             onClick={this.onDeleteClick.bind(this, edu._id)}
-            className="btn btn-danger"
+            className="button is-danger"
           >
             Delete
           </button>
@@ -34,8 +34,13 @@ class Education extends Component {
     ));
     return (
       <div>
-        <h4 className="mb-4">Education Credentials</h4>
-        <table className="table">
+        <h4
+          className="has-text-centered has-text-primary is-uppercase has-text-weight-light"
+          style={{ marginTop: 30 }}
+        >
+          Education Credentials
+        </h4>
+        <table className="table is-fullwidth" style={{ marginTop: 30 }}>
           <thead>
             <tr>
               <th>School</th>
@@ -55,4 +60,7 @@ Education.propTypes = {
   deleteEducation: PropTypes.func.isRequired
 };
 
-export default connect(null, { deleteEducation })(Education);
+export default connect(
+  null,
+  { deleteEducation }
+)(Education);

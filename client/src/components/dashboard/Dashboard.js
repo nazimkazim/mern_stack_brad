@@ -30,47 +30,57 @@ class Dashboard extends Component {
       if (Object.keys(profile).length > 0) {
         dashboardContent = (
           <div>
-            <p className="lead text-muted">
-              Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
-            </p>
+            <h2
+              className="has-text-grey-dark has-text-centered"
+              style={{ marginTop: 20, marginBottom: 20 }}
+            >
+              Welcome{' '}
+              <Link to={`/profile/${profile.handle}`}>
+                {user.name[0].toUpperCase() + user.name.slice(1)}
+              </Link>
+            </h2>
             <ProfileActions />
             <Experience experience={profile.experience} />
             <Education education={profile.education} />
-            <div style={{ marginBottom: '60px' }} />
-            <button
-              onClick={this.onDeleteClick.bind(this)}
-              className="btn btn-danger"
-            >
-              Delete My Account
-            </button>
+            {/* TODO: exp and edu*/}
+            <div style={{ marginBottom: '60px' }}>
+              <button
+                onClick={this.onDeleteClick.bind(this)}
+                className="button is-danger"
+                style={{ marginTop: 30 }}
+              >
+                Delete My Account
+              </button>
+            </div>
           </div>
         );
       } else {
         // User is logged in but has no profile
         dashboardContent = (
-          <div>
-            <p className="lead text-muted">Welcome {user.name}</p>
-            <p>You have not yet setup a profile, please add some info</p>
-            <Link to="/create-profile" className="btn btn-lg btn-info">
-              Create Profile
-            </Link>
-          </div>
+          <section
+            className="hero is-primary is-medium"
+            style={{ marginTop: 100 }}
+          >
+            <div className="hero-body">
+              <h1 className="title">
+                Wellcome {user.name[0].toUpperCase() + user.name.slice(1)}
+              </h1>
+              <h2 className="subtitle">
+                <p>You have not yet set up a profile please add some info</p>
+              </h2>
+              <Link
+                to="/create-profile"
+                className="is-link button is-inverted is-outlined"
+              >
+                Create profile
+              </Link>
+            </div>
+          </section>
         );
       }
     }
 
-    return (
-      <div className="dashboard">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h1 className="display-4">Dashboard</h1>
-              {dashboardContent}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
+    return <div>{dashboardContent}</div>;
   }
 }
 
@@ -86,6 +96,7 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { getCurrentProfile, deleteAccount })(
-  Dashboard
-);
+export default connect(
+  mapStateToProps,
+  { getCurrentProfile, deleteAccount }
+)(Dashboard);
