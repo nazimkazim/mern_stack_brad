@@ -7,3 +7,7 @@ body {
 .container {
   flex: 1;
 }
+
+.tag:not(body) {
+  border-bottom: 2px solid white !important;
+}

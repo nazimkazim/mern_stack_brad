@@ -42,7 +42,7 @@ class Navbar extends Component {
     );
 
     return (
-      <nav className="navbar is-transparent is-primary">
+      <nav className="navbar is-transparent is-light">
         <div className="navbar-brand">
           <Link className="navbar-item" to="/">
             <img

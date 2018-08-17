@@ -11,31 +11,28 @@ class ProfileAbout extends Component {
 
     // Skill list
     const skills = profile.skills.map((skill, index) => (
-      <div key={index} className="p-3">
-        <i className="fa fa-check" />
-        {skill}
+      <div className="tag is-info is-large">
+        <p key={index} className="heading">
+          {skill}
+        </p>
       </div>
     ));
     return (
-      <div>
-        <div className="row">
-          <div className="col-md-12">
-            <div className="card card-body bg-light mb-3">
-              <h3 className="text-center text-info">{firstName}'s Bio</h3>
-              <p className="lead">
-                {isEmpty(profile.bio) ? null : <span>{profile.bio}</span>}
-              </p>
-              <hr />
-              <h3 className="text-center text-info">Skill Set</h3>
-              <div className="row">
-                <div className="d-flex flex-wrap justify-content-center align-items-center">
-                  {skills}
-                </div>
+      <section class="hero is-medium is-primary is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title has-text-centered">Biography</h1>
+            <h2 class="subtitle is-5 has-text-weight-light has-text-grey-lighter">
+              {isEmpty(profile.bio) ? null : <span>{profile.bio}</span>}
+            </h2>
+            <nav class="level is-mobile">
+              <div class="level-item has-text-centered">
+                <div className="tags">{skills}</div>
               </div>
-            </div>
+            </nav>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 }

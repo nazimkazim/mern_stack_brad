@@ -29,7 +29,7 @@ class Dashboard extends Component {
       // Check if logged in user has profile data
       if (Object.keys(profile).length > 0) {
         dashboardContent = (
-          <div>
+          <div className="container is-fluid">
             <h2
               className="has-text-grey-dark has-text-centered"
               style={{ marginTop: 20, marginBottom: 20 }}

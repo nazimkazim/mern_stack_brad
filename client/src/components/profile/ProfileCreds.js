@@ -69,23 +69,30 @@ class ProfileCreds extends Component {
       </li>
     ));
     return (
-      <div className="row">
-        <div className="col-md-6">
-          <h3 className="text-center text-info">Experience</h3>
-          {expItems.length > 0 ? (
-            <ul className="list-group">{expItems}</ul>
-          ) : (
-            <p className="text-center">No experience listed</p>
-          )}
+      <div className="columns">
+        <div className="column is-6">
+          <div className="columns is-centered" style={{ padding: 20 }}>
+            <div className="column is-half">
+              <h3 className="has-text-centered">Experience</h3>
+              {expItems.length > 0 ? (
+                <ul className="list-group">{expItems}</ul>
+              ) : (
+                <p className="text-center">No experience listed</p>
+              )}
+            </div>
+          </div>
         </div>
-
-        <div className="col-md-6">
-          <h3 className="text-center text-info">Education</h3>
-          {eduItems.length > 0 ? (
-            <ul className="list-group">{eduItems}</ul>
-          ) : (
-            <p className="text-center">No education listed</p>
-          )}
+        <div className="column is-6">
+          <div className="columns is-centered" style={{ padding: 20 }}>
+            <div className="column is-half">
+              <h3 className="has-text-centered">Education</h3>
+              {eduItems.length > 0 ? (
+                <ul className="list-group">{eduItems}</ul>
+              ) : (
+                <p className="text-center">No education listed</p>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     );
