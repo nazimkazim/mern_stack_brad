@@ -11,3 +11,8 @@ body {
 .tag:not(body) {
   border-bottom: 2px solid white !important;
 }
+
+.top-bottom-padding-small {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

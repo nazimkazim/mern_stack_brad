@@ -18,12 +18,32 @@ class ProfileAbout extends Component {
       </div>
     ));
     return (
-      <section class="hero is-medium is-primary is-bold">
-        <div class="hero-body">
-          <div class="container">
-            <h1 class="title has-text-centered">Biography</h1>
-            <h2 class="subtitle is-5 has-text-weight-light has-text-grey-lighter">
-              {isEmpty(profile.bio) ? null : <span>{profile.bio}</span>}
+      <section className="hero is-medium is-primary is-bold">
+        <div className="hero-body">
+          <div className="container">
+            <h2
+              className="has-text-centered title is-4 has-text-weight-light"
+              style={{ paddingTop: 15, paddingBottom: 15 }}
+            >
+              Biography
+            </h2>
+            <article className="media">
+              <figure className="media-left">
+                <p className="image is-64x64">
+                  <img className="is-rounded" src={profile.user.avatar} />
+                </p>
+              </figure>
+              <div className="media-content">
+                <div className="content">
+                  <p>{profile.bio}</p>
+                </div>
+              </div>
+            </article>
+            <h2
+              className="has-text-centered title is-4 has-text-weight-light"
+              style={{ paddingTop: 15, paddingBottom: 15 }}
+            >
+              Tools & Technology I use at work
             </h2>
             <nav class="level is-mobile">
               <div class="level-item has-text-centered">
