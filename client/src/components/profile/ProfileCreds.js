@@ -6,41 +6,31 @@ class ProfileCreds extends Component {
     const { experience, education } = this.props;
 
     const expItems = experience.map(exp => (
-      <li key={exp._id} className="list-group-item">
-        <h4>{exp.company}</h4>
-        <p>
-          <Moment format="YYYY/MM/DD">{exp.from}</Moment> -
-          {exp.to === null ? (
-            ' Now'
-          ) : (
-            <Moment format="YYYY/MM/DD">{exp.to}</Moment>
-          )}
-        </p>
-        <p>
-          <strong>Position:</strong>
-          {exp.title}
-        </p>
-        <p>
-          {exp.location === '' ? null : (
-            <span>
-              <strong>Location:</strong>
-              {exp.location}
-            </span>
-          )}
-        </p>
-        <p>
-          {exp.location === '' ? null : (
-            <span>
-              <strong>Description:</strong>
-              {exp.description}
-            </span>
-          )}
-        </p>
+      <li key={exp._id} style={{ marginBottom: 10 }}>
+        <h4 className="tag is-5 subtitle">{exp.company}</h4>
+        <ul className="menu-list" style={{ padding: 15 }}>
+          <li className="is-size-5 has-text-success">
+            <Moment format="YYYY/MM/DD">{exp.from}</Moment> -
+            {exp.to === null ? (
+              ' Now'
+            ) : (
+              <Moment format="YYYY/MM/DD">{exp.to}</Moment>
+            )}
+          </li>
+          <li className="is-uppercase has-text-weight-semibold has-text-grey-light is-4">
+            {exp.title}
+          </li>
+
+          <li className="has-text-info is-uppercase">
+            {exp.location === '' ? null : <span>{exp.location}</span>}
+          </li>
+          <li>{exp.location === '' ? null : <span>{exp.description}</span>}</li>
+        </ul>
       </li>
     ));
 
     const eduItems = education.map(edu => (
-      <li key={edu._id} className="list-group-item">
+      <li key={edu._id}>
         <h4>{edu.school}</h4>
         <p>
           <Moment format="YYYY/MM/DD">{edu.from}</Moment> -
@@ -72,13 +62,17 @@ class ProfileCreds extends Component {
       <div className="columns">
         <div className="column is-6">
           <div className="columns is-centered" style={{ padding: 20 }}>
-            <div className="column is-half">
+            <div className="column is-three-quarters">
               <h3 className="has-text-centered">Experience</h3>
-              {expItems.length > 0 ? (
-                <ul className="list-group">{expItems}</ul>
-              ) : (
-                <p className="text-center">No experience listed</p>
-              )}
+              <div className="menu">
+                {expItems.length > 0 ? (
+                  <ul className="menu-list">
+                    <li>{expItems}</li>
+                  </ul>
+                ) : (
+                  <p className="has-text-centered">No experience listed</p>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -87,9 +81,9 @@ class ProfileCreds extends Component {
             <div className="column is-half">
               <h3 className="has-text-centered">Education</h3>
               {eduItems.length > 0 ? (
-                <ul className="list-group">{eduItems}</ul>
+                <ul className="menu-list">{eduItems}</ul>
               ) : (
-                <p className="text-center">No education listed</p>
+                <p className="has-text-centered">No education listed</p>
               )}
             </div>
           </div>
